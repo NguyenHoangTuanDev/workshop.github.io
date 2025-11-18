@@ -1,4 +1,4 @@
-baseURL = "https://nguyenhoangtuandev.github.io/WorkshopAWS/"
+baseURL = "https://nguyenhoangtuandev.github.io/"
 relativeURLs = false
 canonifyURLs = false
 defaultContentLanguage = "en"
