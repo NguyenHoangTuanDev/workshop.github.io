@@ -1,3 +1,10 @@
+---
+title: "Tuần 6"
+date: 2025-11-18
+weight: 6
+chapter: false
+pre: " <b> 1.6. </b> "
+---
 
 ### Mục tiêu tuần 6 (từ ngày 13/10/2025 - 17/10/2025)
 

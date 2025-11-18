@@ -1,57 +1,21 @@
 ---
-title: "Week 3 Worklog"
-date: "`r Sys.Date()`"
-weight: 1
+title: "Week 3"
+date: 2025-11-18
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 3 Goals (from 22/09/2025 - 26/09/2025)
 
-### Week 3 Objectives:
-
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Clearly understand Compute VM services on AWS.  
+* Become proficient in deploying, managing, and scaling EC2 virtual machines on AWS.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 3 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+| Day | Tasks | Reference Materials |
+| :---: | :--- | :--- |
+| **Monday** | - Learn about Compute VM services on AWS <br>&emsp; + Amazon Elastic Compute Cloud (EC2): IAM, Backup, Key Pair, Elastic Block Store (EBS), Instance Store, User Data, Metadata, EC2 Auto Scaling, review EC2 pricing options <br>&emsp; + Amazon Lightsail <br>&emsp; + Amazon EFS/FSx <br>&emsp; + AWS Application Migration Service (MGN) | <https://youtu.be/O9Ac_vGHquM?si=oQBDke9m6FJXdrhc> <br> <https://youtu.be/BPuD1l2hEQ4?si=XHzAkIC6HG-mFRBj> <br> <https://youtu.be/CXU8D3kyxIc?si=B08A98ymh5vYXJ7a> |
+| **Tuesday** | - Perform basic operations with EC2 <br>&emsp; + Launch EC2 instances <br>&emsp; + Take snapshots of EC2 instances <br>&emsp; + Install applications on EC2 | <https://000004.awsstudygroup.com/> |
+| **Wednesday** | - Manage resources using tags and Resource Groups <br>&emsp; + Use tags via AWS Console: create EC2 instances, add and remove tags, filter resources by tag <br>&emsp; + Use tags via AWS CLI <br>&emsp; + Use Resource Groups | <https://000027.awsstudygroup.com/> |
+| **Thursday** | - Manage resources with Amazon CloudWatch <br>&emsp; + Preparation: initialize Stack in CloudFormation <br>&emsp; + Work with CloudWatch Metrics, CloudWatch Logs, and CloudWatch Alarms <br>&emsp; + Create CloudWatch Dashboard | <https://000008.awsstudygroup.com/> |
+| **Friday** | - Deploy Auto Scaling Group <br>&emsp; + Create Launch Template <br>&emsp; + Create Target Group <br>&emsp; + Initialize Load Balancer <br>&emsp; + Launch Auto Scaling Group <br> - Learn about Lightsail <br>&emsp; + Test applications on Lightsail <br>&emsp; + Use Lightsail Load Balancer, RDS, migrate to EC2 | <https://000045.awsstudygroup.com/> <br> <https://000006.awsstudygroup.com/> |

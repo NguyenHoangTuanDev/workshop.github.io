@@ -1,4 +1,10 @@
-
+---
+title: "Tuần 9"
+date: 2025-11-18
+weight: 9
+chapter: false
+pre: " <b> 1.9. </b> "
+---
 ### Mục tiêu tuần 9 (từ ngày 03/11/2025 - 07/11/2025)
 
 * Tiếp tục các bài thực hành phân tích dữ liệu trên AWS

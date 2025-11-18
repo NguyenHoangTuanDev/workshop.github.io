@@ -1,3 +1,11 @@
+---
+title: "Tuần 8"
+date: 2025-11-18
+weight: 8
+chapter: false
+pre: " <b> 1.8. </b> "
+---
+
 
 ### Mục tiêu tuần 8 (từ ngày 27/10/2025 - 31/10/2025)
 

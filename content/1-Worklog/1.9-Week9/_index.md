@@ -1,57 +1,20 @@
 ---
-title: "Week 9 Worklog"
-date: "`r Sys.Date()`"
-weight: 1
+title: "Week 9"
+date: 2025-11-18
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 9 Goals (from 03/11/2025 - 07/11/2025)
 
-### Week 9 Objectives:
-
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Continue practicing data analysis on AWS
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 9 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+| Day | Tasks | Reference Materials |
+| :---: | :--- | :--- |
+| **Monday** | - Learn about the NoSQL database service Amazon DynamoDB <br>&emsp; + Core components of Amazon DynamoDB: item, table, attribute <br>&emsp; + Primary Key: partition key, composite primary key <br>&emsp; + Secondary Index <br>&emsp; + Naming rules and data types <br>&emsp; + Read Consistency <br>&emsp; + Read/Write Capacity Mode <br> - Use both AWS Management Console and AWS CloudShell to perform preparation steps such as creating tables, writing-reading-updating-querying data, creating and querying Global Secondary Index <br> - Practice with AWS SDK <br>&emsp; + Configure AWS CLI <br>&emsp; + Use AWS SDK for Python to write programs performing operations on Amazon DynamoDB | <https://000060.awsstudygroup.com/> |
+| **Tuesday** | - Conduct the Analytics workshop following instructions <br> - Preparation: create S3 bucket <br> - Ingest and store data: <br>&emsp; + Create Amazon Kinesis Data Firehose <br>&emsp; + Create dummy data <br> - Catalog Data: create IAM Role, AWS Glue Crawlers, and verify the tables created in the catalog <br> - Transform data with Glue (interactive sessions) <br> - Transform data with AWS Glue DataBrew <br> - Transform data with EMR | <https://000072.awsstudygroup.com/> |
+| **Wednesday** | Continue the Analytics workshop <br> - Analyze data with Athena <br> - Analyze data with Kinesis Data Analytics <br> - Visualize data in QuickSight <br> - Set up an Amazon Redshift cluster and use AWS Glue to load data into Amazon Redshift | <https://000072.awsstudygroup.com/> |
+| **Thursday** | - Build dashboards to visualize data with Amazon QuickSight <br>&emsp; + Sign up for QuickSight <br>&emsp; + Build dashboards: update datasets, create line charts, KPIs and Insights, pie charts, create pivot tables, and complete the dashboard <br>&emsp; + Improve the dashboard by formatting, adding charts and detailed data tables | <https://000073.awsstudygroup.com/> |
+| **Friday** | - Review all theoretical and practical content of Module 7 | |

@@ -1,126 +1,52 @@
-﻿---
-title: "Blog 1"
+---
+title: Blog 1
 date: 2025-11-18
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# Bắt đầu với healthcare data lakes: Sử dụng microservices
 
-Các data lake có thể giúp các bệnh viện và cơ sở y tế chuyển dữ liệu thành những thông tin chi tiết về doanh nghiệp và duy trì hoạt động kinh doanh liên tục, đồng thời bảo vệ quyền riêng tư của bệnh nhân. **Data lake** là một kho lưu trữ tập trung, được quản lý và bảo mật để lưu trữ tất cả dữ liệu của bạn, cả ở dạng ban đầu và đã xử lý để phân tích. data lake cho phép bạn chia nhỏ các kho chứa dữ liệu và kết hợp các loại phân tích khác nhau để có được thông tin chi tiết và đưa ra các quyết định kinh doanh tốt hơn.
+# **Phiên bản Amazon EC2 M8a đa dụng mới hiện đã có sẵn**
+Hôm nay, chúng tôi công bố sự ra mắt của các phiên bản [Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/) M8a, phiên bản mới nhất trong dòng phiên bản M đa dụng. Các phiên bản này được trang bị bộ vi xử lý AMD EPYC thế hệ thứ 5 ([5th Generation AMD EPYC (codename Turin) processors](https://www.amd.com/en/products/processors/server/epyc/9005-series.html) ) với tần số tối đa 4.5GHz. Khách hàng có thể mong đợi hiệu suất cao hơn tới 30% và hiệu suất giá tốt hơn tới 19% so với phiên bản M7a. Các phiên bản này cũng cung cấp băng thông bộ nhớ cao hơn, thông lượng mạng và lưu trữ được cải thiện, cùng các tùy chọn cấu hình linh hoạt cho nhiều khối lượng công việc đa năng. general-purpose workloads.
 
-Bài đăng trên blog này là một phần của loạt bài lớn hơn về việc bắt đầu cài đặt data lake dành cho lĩnh vực y tế. Trong bài đăng blog cuối cùng của tôi trong loạt bài, *“Bắt đầu với data lake dành cho lĩnh vực y tế: Đào sâu vào Amazon Cognito”*, tôi tập trung vào các chi tiết cụ thể của việc sử dụng Amazon Cognito và Attribute Based Access Control (ABAC) để xác thực và ủy quyền người dùng trong giải pháp data lake y tế. Trong blog này, tôi trình bày chi tiết cách giải pháp đã phát triển ở cấp độ cơ bản, bao gồm các quyết định thiết kế mà tôi đã đưa ra và các tính năng bổ sung được sử dụng. Bạn có thể truy cập các code samples cho giải pháp tại Git repo này để tham khảo.
 
----
+**Những cải tiến trong M8a**  
+Các phiên bản M8a mang lại hiệu suất trên mỗi vCPU tốt hơn tới 30% so với các phiên bản M7a, khiến chúng trở nên lý tưởng cho các ứng dụng yêu cầu lợi ích từ hiệu suất cao và thông lượng cao như ứng dụng tài chính, trò chơi, kết xuất (rendering), máy chủ ứng dụng, mô hình mô phỏng, kho dữ liệu cỡ vừa, môi trường phát triển ứng dụng, và các cụm bộ nhớ đệm (caching fleets).
 
-## Hướng dẫn kiến trúc
+Chúng cung cấp thêm 45% băng thông bộ nhớ so với các phiên bản M7a, tăng tốc cơ sở dữ liệu trong bộ nhớ (in-memory databases), bộ nhớ đệm phân tán (distributed caches) và phân tích thời gian thực (real-time analytics).
 
-Thay đổi chính kể từ lần trình bày cuối cùng của kiến trúc tổng thể là việc tách dịch vụ đơn lẻ thành một tập hợp các dịch vụ nhỏ để cải thiện khả năng bảo trì và tính linh hoạt. Việc tích hợp một lượng lớn dữ liệu y tế khác nhau thường yêu cầu các trình kết nối chuyên biệt cho từng định dạng; bằng cách giữ chúng được đóng gói riêng biệt với microservices, chúng ta có thể thêm, xóa và sửa đổi từng trình kết nối mà không ảnh hưởng đến những kết nối khác. Các microservices được kết nối rời thông qua tin nhắn publish/subscribe tập trung trong cái mà tôi gọi là “pub/sub hub”.
+Đối với các khối lượng công việc có yêu cầu I/O cao, phiên bản M8a cung cấp băng thông mạng lên đến 75 Gbps và băng thông [Amazon Elastic Block Store (Amazon EBS)](https://aws.amazon.com/ebs/) lên đến 60 Gbps, cải thiện 50% so với thế hệ trước. Những cải tiến này hỗ trợ các ứng dụng hiện đại dựa trên truyền dữ liệu nhanh và giao tiếp mạng có độ trễ thấp
 
-Giải pháp này đại diện cho những gì tôi sẽ coi là một lần lặp nước rút hợp lý khác từ last post của tôi. Phạm vi vẫn được giới hạn trong việc nhập và phân tích cú pháp đơn giản của các **HL7v2 messages** được định dạng theo **Quy tắc mã hóa 7 (ER7)** thông qua giao diện REST.
+Mỗi vCPU trên phiên bản M8a tương ứng với một lỗi CPU vật lý, nghĩa là không có đa luồng đồng thời (simultaneous multithreading - SMT). Trong các bài kiểm tra chuẩn ứng dụng, phiên bản M8a mang lại hiệu suất nhanh hơn tới 60% cho [GroovyJVM](https://groovy-lang.org/) và hiệu suất nhanh hơn tới 39% cho [Cassandra](https://cassandra.apache.org/_/index.html) so với các phiên bản M7a.
 
-**Kiến trúc giải pháp bây giờ như sau:**
+Các phiên bản M8a hỗ trợ cấu hình băng thông phiên bản ([instance bandwidth configuration - IBC](https://docs.aws.amazon.com/ebs/latest/userguide/instance-bandwidth-configuration.html)), cung cấp sự linh hoạt trong việc phân bổ tài nguyên giữa băng thông mạng và băng thông EBS. Điều này mang lại cho khách hàng khả năng mở rộng băng thông mạng hoặc EBS lên đến 25% và cải thiện hiệu suất cơ sở dữ liệu, tốc độ xử lý truy vấn và ghi log.
 
-> *Hình 1. Kiến trúc tổng thể; những ô màu thể hiện những dịch vụ riêng biệt.*
+Các phiên bản M8a có sẵn với mười kích cỡ ảo hóa và hai tùy chọn máy chủ vật lý bare metal (metal-24xl và metal-48xl), cung cấp nhiều lựa chọn triển khai có thể mở rộng từ các ứng dụng nhỏ đến khối lượng công việc của doanh nghiệp lớn. Tất cả những cải tiến này đều được xây dựng trên [AWS Nitro System](https://aws.amazon.com/ec2/nitro/), mang lại chi phí ảo hóa thấp, hiệu suất ổn định và bảo mật nâng cao trên mọi kích thước phiên bản. Các phiên bản này được xây dựng bằng cách sử dụng AWS Nitro Cards thế hệ thứ sáu mới nhất, giúp giảm tải và tăng tốc I/O cho các chức năng, tăng hiệu suất hệ thống tổng thể.
 
----
+Các phiên bản M8a có các kích cỡ lên đến 192 vCPU với 768GiB RAM. Dưới đây là các thông số kỹ thuật chi tiết:
+| Kích thước instance | vCPU | RAM (GiB) | Băng thông mạng | Băng thông EBS |
+|---|---|---|---|---|
+| m8a.medium | 1 | 4 | lên đến 12.5 Gbps | lên đến 10 Gbps |
+| m8a.large | 2 | 8 | lên đến 12.5 Gbps | lên đến 10 Gbps |
+| m8a.xlarge | 4 | 16 | lên đến 12.5 Gbps | lên đến 10 Gbps |
+| m8a.2xlarge | 8 | 32 | lên đến 15 Gbps | lên đến 10 Gbps |
+| m8a.4xlarge | 16 | 64 | lên đến 15 Gbps | lên đến 10 Gbps |
+| m8a.8xlarge | 32 | 128 | 15 Gbps | 10 Gbps |
+| m8a.12xlarge | 48 | 192 | 22.5 Gbps | 15 Gbps |
+| m8a.16xlarge | 64 | 256 | 30 Gbps | 20 Gbps |
+| m8a.24xlarge | 96 | 384 | 40 Gbps | 30 Gbps |
+| m8a.48xlarge | 192 | 768 | 75 Gbps | 60 Gbps |
+| m8a.metal-24xl | 96 | 384 | 40 Gbps | 30 Gbps |
+| m8a.metal-48xl | 192 | 768 | 75 Gbps | 60 Gbps | 
+Để có danh sách đầy đủ về kích thước và thông số kỹ thuật của phiên bản, tham khảo [Amazon EC2 M8a instances page](https://aws.amazon.com/ec2/instance-types/m8a).
 
-Mặc dù thuật ngữ *microservices* có một số sự mơ hồ cố hữu, một số đặc điểm là chung:  
-- Chúng nhỏ, tự chủ, kết hợp rời rạc  
-- Có thể tái sử dụng, giao tiếp thông qua giao diện được xác định rõ  
-- Chuyên biệt để giải quyết một việc  
-- Thường được triển khai trong **event-driven architecture**
+**Khi nào nên sử dụng phiên bản M8a?**
+M8a rất phù hợp với các ứng dụng đa năng cần sự cân bằng giữa tính toán, bộ nhớ và mạng. Phiên bản M8a lý tưởng cho lưu trữ web và ứng dụng, kiến trúc microservices và cơ sở dữ liệu, nơi hiệu suất có thể dự đoán được và khả năng mở rộng hiệu quả là yếu tố quan trọng.
 
-Khi xác định vị trí tạo ranh giới giữa các microservices, cần cân nhắc:  
-- **Nội tại**: công nghệ được sử dụng, hiệu suất, độ tin cậy, khả năng mở rộng  
-- **Bên ngoài**: chức năng phụ thuộc, tần suất thay đổi, khả năng tái sử dụng  
-- **Con người**: quyền sở hữu nhóm, quản lý *cognitive load*
+Các phiên bản này được chứng nhận SAP và cũng rất phù hợp với các khối lượng công việc doanh nghiệp như ứng dụng tài chính và hệ thống hoạch định nguồn lực doanh nghiệp (enterprise resource planning - ERP). Chúng cũng hiệu quả tương đương cho bộ nhớ đệm trong bộ nhớ (in-memory caching) và quản lý quan hệ khách hàng (CRM), bên cạnh các môi trường phát triển và thử nghiệm đòi hỏi hiệu quả chi phí và sự linh hoạt. Với tính linh hoạt này, M8a hỗ trợ nhiều khối lượng công việc khác nhau đồng thời giúp khách hàng cải thiện hiệu suất giá.
 
----
+**Hiện đã có sẵn**  
+Các phiên bản Amazon EC2 M8a hiện đã có sẵn tại các khu vực [AWS](https://docs.aws.amazon.com/glossary/latest/reference/glos-chap.html#region) US East (Ohio), US West (Oregon) và Europe (Spain). Các phiên bản M8a có thể được mua dưới dạng [On-Demand](https://aws.amazon.com/ec2/pricing/on-demand/), [Savings Plans](https://aws.amazon.com/savingsplans/), và [Spot Instances](https://aws.amazon.com/ec2/spot/pricing/). Các phiên bản M8a cũng có sẵn trên [Dedicated Hosts](https://aws.amazon.com/ec2/dedicated-hosts/pricing/). Để tìm hiểu thêm, hãy truy cập trang [Amazon EC2 Pricing](https://aws.amazon.com/ec2/pricing).
 
-## Lựa chọn công nghệ và phạm vi giao tiếp
-
-| Phạm vi giao tiếp                        | Các công nghệ / mô hình cần xem xét                                                        |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Trong một microservice                   | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Giữa các microservices trong một dịch vụ | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Giữa các dịch vụ                         | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
-
----
-
-## The pub/sub hub
-
-Việc sử dụng kiến trúc **hub-and-spoke** (hay message broker) hoạt động tốt với một số lượng nhỏ các microservices liên quan chặt chẽ.  
-- Mỗi microservice chỉ phụ thuộc vào *hub*  
-- Kết nối giữa các microservice chỉ giới hạn ở nội dung của message được xuất  
-- Giảm số lượng synchronous calls vì pub/sub là *push* không đồng bộ một chiều
-
-Nhược điểm: cần **phối hợp và giám sát** để tránh microservice xử lý nhầm message.
-
----
-
-## Core microservice
-
-Cung cấp dữ liệu nền tảng và lớp truyền thông, gồm:  
-- **Amazon S3** bucket cho dữ liệu  
-- **Amazon DynamoDB** cho danh mục dữ liệu  
-- **AWS Lambda** để ghi message vào data lake và danh mục  
-- **Amazon SNS** topic làm *hub*  
-- **Amazon S3** bucket cho artifacts như mã Lambda
-
-> Chỉ cho phép truy cập ghi gián tiếp vào data lake qua hàm Lambda → đảm bảo nhất quán.
-
----
-
-## Front door microservice
-
-- Cung cấp API Gateway để tương tác REST bên ngoài  
-- Xác thực & ủy quyền dựa trên **OIDC** thông qua **Amazon Cognito**  
-- Cơ chế *deduplication* tự quản lý bằng DynamoDB thay vì SNS FIFO vì:
-  1. SNS deduplication TTL chỉ 5 phút
-  2. SNS FIFO yêu cầu SQS FIFO
-  3. Chủ động báo cho sender biết message là bản sao
-
----
-
-## Staging ER7 microservice
-
-- Lambda “trigger” đăng ký với pub/sub hub, lọc message theo attribute  
-- Step Functions Express Workflow để chuyển ER7 → JSON  
-- Hai Lambda:
-  1. Sửa format ER7 (newline, carriage return)
-  2. Parsing logic  
-- Kết quả hoặc lỗi được đẩy lại vào pub/sub hub
-
----
-
-## Tính năng mới trong giải pháp
-
-### 1. AWS CloudFormation cross-stack references
-Ví dụ *outputs* trong core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+Để tìm hiểu thêm, hãy truy cập trang [Amazon EC2 M8a instances](https://aws.amazon.com/ec2/instance-types/m8a) và gửi phản hồi tới [AWS re:Post for EC2](https://repost.aws/tags/TAO-wqN9fYRoyrpdULLa5y7g/amazon-ec-2/) hoặc qua các liên hệ hỗ trợ AWS thông thường của bạn.

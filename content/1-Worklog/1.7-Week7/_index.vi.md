@@ -1,4 +1,10 @@
-
+---
+title: "Tuần 7"
+date: 2025-11-18
+weight: 7
+chapter: false
+pre: " <b> 1.7. </b> "
+---
 ### Mục tiêu tuần 7 (từ ngày 20/10/2025 - 24/10/2025)
 
 * Hiểu về các dịch vụ cơ sở dữ liệu trên AWS

@@ -1,3 +1,11 @@
+---
+title: "Tuần 5"
+date: 2025-11-18
+weight: 5
+chapter: false
+pre: " <b> 1.5. </b> "
+---
+
 
 ### Mục tiêu tuần 5 (từ ngày 06/10/2025 - 10/10/2025)
 

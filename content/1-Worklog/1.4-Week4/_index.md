@@ -1,57 +1,21 @@
 ---
-title: "Week 4 Worklog"
-date: "`r Sys.Date()`"
-weight: 1
+title: "Week 4"
+date: 2025-11-18
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 4 Goals (from 29/09/2025 - 03/10/2025)
 
-### Week 4 Objectives:
-
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Clearly understand storage services on AWS.  
+* Become proficient in deploying S3 and implementing a comprehensive backup strategy with AWS Backup.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 4 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+| Day | Tasks | Reference Materials |
+| :---: | :--- | :--- |
+| **Monday** | - Learn about storage services on AWS <br>&emsp; + Amazon Simple Storage Service - S3 <br>&emsp; + Amazon Storage Gateway <br>&emsp; + Snow Family: Snowball, Snowball Edge, Snowmobile <br>&emsp; + Disaster recovery strategies on AWS: backup and recovery, pillow light, low capacity active-active, full capacity active-active <br>&emsp; + AWS Backup | |
+| **Tuesday** | - Practice with S3 bucket <br>&emsp; + Preparation: create an S3 bucket and upload data <br>&emsp; + Enable Static Website feature <br>&emsp; + Configure Block Public Access and public objects <br>&emsp; + Test the website, speed up static site with CloudFront <br>&emsp; + Move and copy S3 Objects across regions | <https://000057.awsstudygroup.com/> |
+| **Wednesday** | - Deploy AWS Backup into the system: prepare infrastructure, initialize Backup Plan, set up Notification and test functionality <br> - Practice VM Import/Export: prepare virtual machine, import VM to AWS, and export VM from AWS | <https://000013.awsstudygroup.com/> <br> <https://000014.awsstudygroup.com/> |
+| **Thursday** | - Deploy File Storage Gateway to set up File Sharing connection with on-premise machines <br>&emsp; + Preparation: create an S3 bucket and EC2 for Storage Gateway <br>&emsp; + Use AWS Storage Gateway: create Storage Gateway, create File Shares, connect File Shares with on-premise machines | <https://000024.awsstudygroup.com/> |
+| **Friday** | - Set up shared data storage for Windows infrastructure with FSx <br>&emsp; + Create practice environment, SSD Multi-AZ file system and HDD Multi-AZ file system <br>&emsp; + Create file share <br>&emsp; + Monitor and manage performance <br>&emsp; + Manage user sessions and open files <br>&emsp; + Enable user memory quotas and enable continuous file share access <br>&emsp; + Scale throughput and storage capacity | <https://000025.awsstudygroup.com/> |

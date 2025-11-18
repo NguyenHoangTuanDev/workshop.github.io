@@ -1,123 +1,54 @@
-﻿---
-title: "Blog 1"
+---
+title: Blog 1
 date: 2025-11-18
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
 
-# Getting Started with Healthcare Data Lakes: Using Microservices
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
+# New general-purpose Amazon EC2 M8a instances are now available
+Today, we’re announcing the availability of  [Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/)  M8a instances, the latest addition to the general-purpose M instance family. These instances are powered by the  [5th Generation AMD EPYC (codename Turin) processors](https://www.amd.com/en/products/processors/server/epyc/9005-series.html)  with a maximum frequency of 4.5GHz. Customers can expect up to 30% higher performance and up to 19% better price performance compared to M7a instances. They also provide higher memory bandwidth, improved networking and storage throughput, and flexible configuration options for a broad set of general-purpose workloads.
 
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+**Improvements in M8a**
 
+M8a instances deliver up to 30% better performance per vCPU compared to M7a instances, making them ideal for applications that require benefit from high performance and high throughput such as financial applications, gaming, rendering, application servers, simulation modeling, midsize data stores, application development environments, and caching fleets.
+
+They provide 45% more memory bandwidth compared to M7a instances, accelerating in-memory databases, distributed caches, and real-time analytics.
+
+For workloads with high I/O requirements, M8a instances provide up to 75 Gbps of networking bandwidth and 60 Gbps of  [Amazon Elastic Block Store (Amazon EBS)](https://aws.amazon.com/ebs/)  bandwidth, a 50% improvement over the previous generation. These enhancements support modern applications that rely on rapid data transfer and low-latency network communication.
+
+Each vCPU on an M8a instance corresponds to a physical CPU core, meaning there is no simultaneous multithreading (SMT). In application benchmarks, M8a instances delivered up to 60% faster performance for  [GroovyJVM](https://groovy-lang.org/)  and up to 39% faster performance for  [Cassandra](https://cassandra.apache.org/_/index.html)  compared to M7a instances.
+
+M8a instances support [instance bandwidth configuration (IBC)](https://docs.aws.amazon.com/ebs/latest/userguide/instance-bandwidth-configuration.html), which provides flexibility to allocate resources between networking and EBS bandwidth. This gives customers the flexibility to scale network or EBS bandwidth by up to 25% and improve database performance, query processing, and logging speeds.
+
+M8a is available in ten virtualized sizes and two bare metal options (**metal-24xl**  and  **metal-48xl)**, providing deployment choices that scale from small applications to large enterprise workloads. All of these improvements are built on the  [AWS Nitro System](https://aws.amazon.com/ec2/nitro/), which delivers low virtualization overhead, consistent performance, and advanced security across all instance sizes. These instances are built using the latest sixth generation AWS Nitro Cards, which offload and accelerate I/O for functions, increasing overall system performance.
+
+M8a instances feature sizes of up to 192 vCPU with 768GiB RAM. Here are the detailed specs:
+
+| Instance size | vCPUs | Memory (GiB) | Network bandwidth (Gbps) | EBS bandwidth (Gbps) |
+|---------------|-------|--------------|---------------------------|-----------------------|
+| medium        | 1     | 4            | Up to 12.5                | Up to 10              |
+| large         | 2     | 8            | Up to 12.5                | Up to 10              |
+| xlarge        | 4     | 16           | Up to 12.5                | Up to 10              |
+| 2xlarge       | 8     | 32           | Up to 15                  | Up to 10              |
+| 4xlarge       | 16    | 64           | Up to 15                  | Up to 10              |
+| 8xlarge       | 32    | 128          | 15                        | 10                    |
+| 12xlarge      | 48    | 192          | 22.5                      | 15                    |
+| 16xlarge      | 64    | 256          | 30                        | 20                    |
+| 24xlarge      | 96    | 384          | 40                        | 30                    |
+| 48xlarge      | 192   | 768          | 75                        | 60                    |
+| metal-24xl    | 96    | 384          | 40                        | 30                    |
+| metal-48xl    | 192   | 768          | 75                        | 60                    |
 ---
+For a complete list of instance sizes and specifications, refer to the  [Amazon EC2 M8a instances page](https://aws.amazon.com/ec2/instance-types/m8a).
 
-## Architecture Guidance
+**When to use M8a instances** 
+M8a is a strong fit for general-purpose applications that need a balance of compute, memory, and networking. M8a instances are ideal for web and application hosting, microservices architectures, and databases where predictable performance and efficient scaling are important.
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”
+These instances are SAP certified and also well suited for enterprise workloads such as financial applications and enterprise resource planning (ERP) systems. They’re equally effective for in-memory caching and customer relationship management (CRM), in addition to development and test environments that require cost efficiency and flexibility. With this versatility, M8a supports a wide spectrum of workloads while helping customers improve price performance.
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+**Now available**
+Amazon EC2 M8a instances are available today in US East (Ohio) US West (Oregon) and Europe (Spain)  [AWS Regions](https://docs.aws.amazon.com/glossary/latest/reference/glos-chap.html#region). M8a instances can be purchased as  [On-Demand](https://aws.amazon.com/ec2/pricing/on-demand/),  [Savings Plans](https://aws.amazon.com/savingsplans/), and  [Spot Instances](https://aws.amazon.com/ec2/spot/pricing/). M8a instances are also available on [Dedicated Hosts](https://aws.amazon.com/ec2/dedicated-hosts/pricing/). To learn more, visit the  [Amazon EC2 Pricing page](https://aws.amazon.com/ec2/pricing).
 
-**The solution architecture is now as follows:**
-
-> *Figure 1. Overall architecture; colored boxes represent distinct services.*
-
----
-
-While the term *microservices* has some inherent ambiguity, certain traits are common:  
-- Small, autonomous, loosely coupled  
-- Reusable, communicating through well-defined interfaces  
-- Specialized to do one thing well  
-- Often implemented in an **event-driven architecture**
-
-When determining where to draw boundaries between microservices, consider:  
-- **Intrinsic**: technology used, performance, reliability, scalability  
-- **Extrinsic**: dependent functionality, rate of change, reusability  
-- **Human**: team ownership, managing *cognitive load*
-
----
-
-## Technology Choices and Communication Scope
-
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
-
----
-
-## The Pub/Sub Hub
-
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.  
-- Each microservice depends only on the *hub*  
-- Inter-microservice connections are limited to the contents of the published message  
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous *push*
-
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
-
----
-
-## Core Microservice
-
-Provides foundational data and communication layer, including:  
-- **Amazon S3** bucket for data  
-- **Amazon DynamoDB** for data catalog  
-- **AWS Lambda** to write messages into the data lake and catalog  
-- **Amazon SNS** topic as the *hub*  
-- **Amazon S3** bucket for artifacts such as Lambda code
-
-> Only allow indirect write access to the data lake through a Lambda function → ensures consistency.
-
----
-
-## Front Door Microservice
-
-- Provides an API Gateway for external REST interaction  
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**  
-- Self-managed *deduplication* mechanism using DynamoDB instead of SNS FIFO because:  
-  1. SNS deduplication TTL is only 5 minutes  
-  2. SNS FIFO requires SQS FIFO  
-  3. Ability to proactively notify the sender that the message is a duplicate  
-
----
-
-## Staging ER7 Microservice
-
-- Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 → JSON  
-- Two Lambdas:  
-  1. Fix ER7 formatting (newline, carriage return)  
-  2. Parsing logic  
-- Result or error is pushed back into the pub/sub hub  
-
----
-
-## New Features in the Solution
-
-### 1. AWS CloudFormation Cross-Stack References
-Example *outputs* in the core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+To learn more, visit the  [Amazon EC2 M8a instances page](https://aws.amazon.com/ec2/instance-types/m8a)  and send feedback to  [AWS re:Post for EC2](https://repost.aws/tags/TAO-wqN9fYRoyrpdULLa5y7g/amazon-ec-2/)  or through your usual AWS support contacts.

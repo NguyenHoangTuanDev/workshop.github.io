@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Event 2"
 date: 2025-11-18
 weight: 1
@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+# Summary Report: "GenAI-powered App-DB Modernization workshop"
 
 ### Event Objectives
 

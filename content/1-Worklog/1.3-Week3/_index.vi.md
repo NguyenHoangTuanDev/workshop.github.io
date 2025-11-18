@@ -1,3 +1,10 @@
+---
+title: "Tuần 3"
+date: 2025-11-18
+weight: 3
+chapter: false
+pre: " <b> 1.3. </b> "
+---
 
 ### Mục tiêu tuần 3 (từ ngày 22/09/2025 - 26/09/2025)
 

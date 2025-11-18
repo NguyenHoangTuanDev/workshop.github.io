@@ -1,3 +1,10 @@
+---
+title: "Tuần 4"
+date: 2025-11-18
+weight: 4
+chapter: false
+pre: " <b> 1.4. </b> "
+---
 
 ### Mục tiêu tuần 4 (từ ngày 29/09/2025 - 03/10/2025)
 

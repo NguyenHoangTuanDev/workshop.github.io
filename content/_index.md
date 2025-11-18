@@ -1,6 +1,6 @@
 ﻿---
 title: "Internship Report"
-date: 2025-11-18
+date: 2025-11-22
 weight: 1
 chapter: false
 ---
@@ -8,26 +8,51 @@ chapter: false
     
 # Internship Report
 
-### Student Information:
-&emsp; **Full Name:** Nguyen Van A
+### Team Members:
 
-&emsp; **Phone Number:** 0989888999 
+#### Member 1:
+&emsp; **Full Name:** Nguyễn Hoàng Tuấn 
 
-&emsp; **Email:** Anguyenvan@gmail.com
+&emsp; **Phone Number:** 0799559397
 
-&emsp; **University:** Ho Chi Minh City University of Technology and Education
+&emsp; **Email:** hoangtuan6103@gmail.com
+
+&emsp; **University:** Sai Gon University 
 
 &emsp; **Major:** Information Technology
 
-&emsp; **Class:** AWS082025
+&emsp; **Class:** DCT1211
 
 &emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
 
 &emsp; **Internship Position:** FCJ Cloud Intern
 
-&emsp; **Internship Duration:** From 12/08/2025 to 12/11/2025
+&emsp; **Internship Duration:** From 29/09/2025 to 22/11/2025
 
-![Your profile picture](/images/avatar.png)
+![Member 1 profile picture](/workshop.github.io/images/avatar.png)
+
+---
+
+#### Member 2:
+&emsp; **Full Name:** Nguyễn Thị Thu Hoài
+
+&emsp; **Phone Number:** 0987654321 
+
+&emsp; **Email:** Bnguyenvan@gmail.com
+
+&emsp; **University:** Sai Gon University 
+
+&emsp; **Major:** Information Technology
+
+&emsp; **Class:** DCT121
+
+&emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
+
+&emsp; **Internship Position:** FCJ Cloud Intern
+
+&emsp; **Internship Duration:** From 29/09/2025 to 22/11/2025
+
+![Member 2 profile picture](/workshop.github.io/images/avatar.png)
 
 ### Report Content
 

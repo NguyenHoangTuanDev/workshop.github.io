@@ -1,127 +1,77 @@
-﻿---
-title: "Blog 6"
+---
+title: Blog 6
 date: 2025-11-18
-weight: 1
+weight: 6
 chapter: false
 pre: " <b> 3.6. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Tối ưu hóa khối lượng công việc HPC với AWS Well-Architected Lens được cập nhật
 
-# Bắt đầu với healthcare data lakes: Sử dụng microservices
+![](https://d2908q01vomqb2.cloudfront.net/e6c3dd630428fd54834172b8fd2735fed9416da4/2025/06/23/HPCBlog-363-header-sm.jpeg)
+Khung [Kiến trúc Tốt của AWS](https://aws.amazon.com/architecture/well-architected/) giúp bạn giải quyết những thách thức quan trọng trong việc xây dựng kiến ​​trúc đám mây bằng cách cung cấp các phương pháp thực hành kiến ​​trúc tốt nhất đã được chứng minh. Môi trường Điện toán Hiệu năng Cao (HPC) đòi hỏi những cân nhắc kiến ​​trúc chuyên biệt, khác với khối lượng công việc đám mây thông thường. Khi các tổ chức di chuyển khối lượng công việc HPC của mình sang AWS hoặc xây dựng các khả năng HPC mới trên đám mây, họ thường gặp phải những câu hỏi về phương pháp thực hành kiến ​​trúc tốt nhất:
+-   Làm thế nào để đảm bảo kiến ​​trúc HPC của bạn tuân thủ các biện pháp tối ưu hóa chi phí và bảo mật?
+    
+-   Những mô hình nào được khuyến nghị để mở rộng tài nguyên tính toán một cách hiệu quả?
+    
+-   Làm thế nào để tối ưu hóa lưu trữ và mạng cho các yêu cầu cụ thể của HPC?
+    
+-   Dịch vụ AWS nào phù hợp nhất với các loại khối lượng công việc HPC khác nhau?
+    
 
-Các data lake có thể giúp các bệnh viện và cơ sở y tế chuyển dữ liệu thành những thông tin chi tiết về doanh nghiệp và duy trì hoạt động kinh doanh liên tục, đồng thời bảo vệ quyền riêng tư của bệnh nhân. **Data lake** là một kho lưu trữ tập trung, được quản lý và bảo mật để lưu trữ tất cả dữ liệu của bạn, cả ở dạng ban đầu và đã xử lý để phân tích. data lake cho phép bạn chia nhỏ các kho chứa dữ liệu và kết hợp các loại phân tích khác nhau để có được thông tin chi tiết và đưa ra các quyết định kinh doanh tốt hơn.
+Cho đến nay, việc tìm kiếm câu trả lời cho những câu hỏi này thường đòi hỏi sự tư vấn trực tiếp từ các Kiến trúc sư Giải pháp AWS chuyên về HPC. Hôm nay, chúng tôi xin công bố bản cập nhật cho sách trắng [về Ống kính Điện toán Hiệu năng Cao (HPC) Kiến trúc Tốt của AWS](https://docs.aws.amazon.com/wellarchitected/latest/high-performance-computing-lens/high-performance-computing-lens.html) , cung cấp cho bạn hướng dẫn kiến ​​trúc toàn diện trong một tài nguyên duy nhất, đáng tin cậy. Ống kính mới được cập nhật này hợp nhất nhiều năm kinh nghiệm triển khai AWS HPC thành các phương pháp hay nhất có cấu trúc, giúp bạn xây dựng và tối ưu hóa khối lượng công việc HPC trên AWS.
 
-Bài đăng trên blog này là một phần của loạt bài lớn hơn về việc bắt đầu cài đặt data lake dành cho lĩnh vực y tế. Trong bài đăng blog cuối cùng của tôi trong loạt bài, *“Bắt đầu với data lake dành cho lĩnh vực y tế: Đào sâu vào Amazon Cognito”*, tôi tập trung vào các chi tiết cụ thể của việc sử dụng Amazon Cognito và Attribute Based Access Control (ABAC) để xác thực và ủy quyền người dùng trong giải pháp data lake y tế. Trong blog này, tôi trình bày chi tiết cách giải pháp đã phát triển ở cấp độ cơ bản, bao gồm các quyết định thiết kế mà tôi đã đưa ra và các tính năng bổ sung được sử dụng. Bạn có thể truy cập các code samples cho giải pháp tại Git repo này để tham khảo.
+Ống kính HPC là một phần của [Khung Kiến trúc Tốt của AWS (AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/) ), một nền tảng đã giúp khách hàng cải thiện kiến ​​trúc đám mây của họ kể từ năm 2015. Khung này giải quyết sáu trụ cột chính: [Vận hành Xuất sắc](https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/welcome.html) , [Bảo mật](https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html) , [Độ tin cậy](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html) , [Hiệu quả Hiệu suất](https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/welcome.html) , [Tối ưu hóa Chi phí](https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html) và [Tính bền vững](https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sustainability-pillar.html) . Ống kính HPC mở rộng hướng dẫn này để giải quyết những thách thức đặc thù của khối lượng công việc HPC.
 
----
+## Có gì mới ở Ống kính HPC?
 
-## Hướng dẫn kiến trúc
+Kể từ lần phát hành HPC Lens gần nhất vào năm 2019, AWS đã giới thiệu nhiều cải tiến về khả năng HPC. Bản cập nhật này tích hợp các công nghệ và bài học kinh nghiệm mới, cung cấp cho bạn những phương pháp tối ưu nhất hiện hành cho khối lượng công việc HPC. Các cập nhật chính bao gồm:
 
-Thay đổi chính kể từ lần trình bày cuối cùng của kiến trúc tổng thể là việc tách dịch vụ đơn lẻ thành một tập hợp các dịch vụ nhỏ để cải thiện khả năng bảo trì và tính linh hoạt. Việc tích hợp một lượng lớn dữ liệu y tế khác nhau thường yêu cầu các trình kết nối chuyên biệt cho từng định dạng; bằng cách giữ chúng được đóng gói riêng biệt với microservices, chúng ta có thể thêm, xóa và sửa đổi từng trình kết nối mà không ảnh hưởng đến những kết nối khác. Các microservices được kết nối rời thông qua tin nhắn publish/subscribe tập trung trong cái mà tôi gọi là “pub/sub hub”.
+-   [Những tiến bộ của AWS ParallelCluster](https://aws.amazon.com/hpc/parallelcluster/) trong việc xây dựng và quản lý cụm HPC
+    
+-   Các họ phiên bản tính toán mới [được tối ưu hóa cho HPC](https://aws.amazon.com/ec2/instance-types/#:~:text=Generation%20Instances%20page.-,HPC%20Optimized,-High%20performance%20computing) được thiết kế cho các loại khối lượng công việc cụ thể
+    
+-   Các tùy chọn lưu trữ nâng cao và các biện pháp tốt nhất cho hệ thống tệp hiệu suất cao
+    
+-   Khả năng kết nối mạng tiên tiến giúp cải thiện hiệu suất ứng dụng
+    
+-   Hướng dẫn tích hợp cho các dịch vụ được quản lý bao gồm [AWS Batch](https://aws.amazon.com/batch/) , [Amazon FSx](https://aws.amazon.com/fsx/) và [AWS Parallel Computing Service](https://aws.amazon.com/pcs/)
+    
+-   Cập nhật các khuyến nghị về bảo mật và tuân thủ
+    
+-   Chiến lược tối ưu hóa chi phí mới cho khối lượng công việc HPC
+    
 
-Giải pháp này đại diện cho những gì tôi sẽ coi là một lần lặp nước rút hợp lý khác từ last post của tôi. Phạm vi vẫn được giới hạn trong việc nhập và phân tích cú pháp đơn giản của các **HL7v2 messages** được định dạng theo **Quy tắc mã hóa 7 (ER7)** thông qua giao diện REST.
+Những bản cập nhật này cung cấp cho bạn hướng dẫn toàn diện để thiết kế, triển khai và tối ưu hóa khối lượng công việc HPC trên AWS, kết hợp những tiến bộ công nghệ mới nhất và các phương pháp hay nhất đã học được từ quá trình triển khai thực tế.
 
-**Kiến trúc giải pháp bây giờ như sau:**
+## Ai nên sử dụng Lens được cập nhật?
 
-> *Hình 1. Kiến trúc tổng thể; những ô màu thể hiện những dịch vụ riêng biệt.*
+Ống kính HPC đặc biệt có giá trị nếu bạn:
 
----
+-   Lên kế hoạch triển khai HPC mới trên AWS
+    
+-   Đánh giá kiến ​​trúc HPC hiện tại của bạn so với các phương pháp hay nhất hiện tại
+    
+-   Tối ưu hóa hiệu suất, bảo mật hoặc chi phí cho khối lượng công việc HPC của bạn
+    
+-   Chuẩn bị cho việc tăng quy mô hoặc độ phức tạp của môi trường HPC của bạn
+    
 
-Mặc dù thuật ngữ *microservices* có một số sự mơ hồ cố hữu, một số đặc điểm là chung:  
-- Chúng nhỏ, tự chủ, kết hợp rời rạc  
-- Có thể tái sử dụng, giao tiếp thông qua giao diện được xác định rõ  
-- Chuyên biệt để giải quyết một việc  
-- Thường được triển khai trong **event-driven architecture**
+Cho dù bạn là chuyên gia HPC dày dặn kinh nghiệm hay mới làm quen với HPC dựa trên đám mây, ống kính này đều cung cấp những thông tin chi tiết có giá trị để nâng cao kiến ​​trúc của bạn.
 
-Khi xác định vị trí tạo ranh giới giữa các microservices, cần cân nhắc:  
-- **Nội tại**: công nghệ được sử dụng, hiệu suất, độ tin cậy, khả năng mở rộng  
-- **Bên ngoài**: chức năng phụ thuộc, tần suất thay đổi, khả năng tái sử dụng  
-- **Con người**: quyền sở hữu nhóm, quản lý *cognitive load*
+## Bắt đầu
 
----
+Để bắt đầu xây dựng môi trường HPC được thiết kế tốt trên AWS:
 
-## Lựa chọn công nghệ và phạm vi giao tiếp
+-   Xem lại [những kiến ​​thức cơ bản về AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/?wa-lens-whitepapers.sort-by=item.additionalFields.sortDate&wa-lens-whitepapers.sort-order=desc&wa-guidance-whitepapers.sort-by=item.additionalFields.sortDate&wa-guidance-whitepapers.sort-order=desc#:~:text=AWS%20Well%2DArchitected%20and%20the%20Six%20Pillars) .
+    
+-   Đọc [sách trắng về AWS Well-Architected HPC Lens](https://docs.aws.amazon.com/wellarchitected/latest/high-performance-computing-lens/high-performance-computing-lens.html) .
+    
+-   Xem lại khối lượng công việc của bạn bằng [AWS Well-Architected Tool](https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html) , kết hợp cả các câu hỏi về Framework và HPC Lens.
+    
 
-| Phạm vi giao tiếp                        | Các công nghệ / mô hình cần xem xét                                                        |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Trong một microservice                   | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Giữa các microservices trong một dịch vụ | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Giữa các dịch vụ                         | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+Để tìm hiểu thêm về các tính năng của AWS HPC, hãy truy cập trang [Giải pháp AWS HPC](https://aws.amazon.com/hpc/) .
 
----
+## Phần kết luận
 
-## The pub/sub hub
-
-Việc sử dụng kiến trúc **hub-and-spoke** (hay message broker) hoạt động tốt với một số lượng nhỏ các microservices liên quan chặt chẽ.  
-- Mỗi microservice chỉ phụ thuộc vào *hub*  
-- Kết nối giữa các microservice chỉ giới hạn ở nội dung của message được xuất  
-- Giảm số lượng synchronous calls vì pub/sub là *push* không đồng bộ một chiều
-
-Nhược điểm: cần **phối hợp và giám sát** để tránh microservice xử lý nhầm message.
-
----
-
-## Core microservice
-
-Cung cấp dữ liệu nền tảng và lớp truyền thông, gồm:  
-- **Amazon S3** bucket cho dữ liệu  
-- **Amazon DynamoDB** cho danh mục dữ liệu  
-- **AWS Lambda** để ghi message vào data lake và danh mục  
-- **Amazon SNS** topic làm *hub*  
-- **Amazon S3** bucket cho artifacts như mã Lambda
-
-> Chỉ cho phép truy cập ghi gián tiếp vào data lake qua hàm Lambda → đảm bảo nhất quán.
-
----
-
-## Front door microservice
-
-- Cung cấp API Gateway để tương tác REST bên ngoài  
-- Xác thực & ủy quyền dựa trên **OIDC** thông qua **Amazon Cognito**  
-- Cơ chế *deduplication* tự quản lý bằng DynamoDB thay vì SNS FIFO vì:
-  1. SNS deduplication TTL chỉ 5 phút
-  2. SNS FIFO yêu cầu SQS FIFO
-  3. Chủ động báo cho sender biết message là bản sao
-
----
-
-## Staging ER7 microservice
-
-- Lambda “trigger” đăng ký với pub/sub hub, lọc message theo attribute  
-- Step Functions Express Workflow để chuyển ER7 → JSON  
-- Hai Lambda:
-  1. Sửa format ER7 (newline, carriage return)
-  2. Parsing logic  
-- Kết quả hoặc lỗi được đẩy lại vào pub/sub hub
-
----
-
-## Tính năng mới trong giải pháp
-
-### 1. AWS CloudFormation cross-stack references
-Ví dụ *outputs* trong core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+Ống kính HPC Kiến trúc Tốt AWS (AWS Well-Architected HPC Lens) được cập nhật cung cấp cho bạn một khuôn khổ toàn diện để thiết kế, triển khai và tối ưu hóa khối lượng công việc HPC trên AWS. Bằng cách kết hợp những tiến bộ mới nhất trong công nghệ HPC và các phương pháp hay nhất, ống kính này giúp bạn xây dựng môi trường HPC hiệu quả, an toàn và tiết kiệm chi phí. Cho dù bạn mới làm quen với HPC trên AWS hay đang tìm cách cải thiện kiến ​​trúc hiện có, Ống kính HPC đều cung cấp những thông tin chi tiết giá trị để thúc đẩy dự án của bạn. Chúng tôi khuyến khích bạn tải xuống sách trắng, khám phá các tài nguyên được cung cấp và bắt đầu áp dụng những phương pháp hay nhất này vào khối lượng công việc HPC của bạn ngay hôm nay. Như thường lệ, chúng tôi hoan nghênh phản hồi của bạn và mong muốn được chứng kiến ​​các giải pháp HPC sáng tạo mà bạn xây dựng trên AWS.

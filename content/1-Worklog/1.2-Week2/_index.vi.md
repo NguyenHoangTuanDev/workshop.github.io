@@ -1,3 +1,10 @@
+---
+title: "Tuần 2"
+date: 2025-11-18
+weight: 2
+chapter: false
+pre: " <b> 1.2. </b> "
+---
 
 ### Mục tiêu tuần 2 (từ ngày 15/09/2025 - 19/09/2025)
 

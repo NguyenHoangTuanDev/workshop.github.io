@@ -1,123 +1,72 @@
-﻿---
-title: "Blog 5"
+---
+title: Blog 5
 date: 2025-11-18
-weight: 1
+weight: 5
 chapter: false
 pre: " <b> 3.5. </b> "
 ---
 
-# Getting Started with Healthcare Data Lakes: Using Microservices
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
+# The future of customer service is here: From contact centers to experience hubs
 
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+by  Akshay Vemuganti  on  24 JUN 2025  in  [Amazon Connect](https://aws.amazon.com/blogs/contact-center/category/messaging/amazon-connect/ "View all posts in Amazon Connect"),  [Foundational (100)](https://aws.amazon.com/blogs/contact-center/category/learning-levels/foundational-100/ "View all posts in Foundational (100)"),  [Thought Leadership](https://aws.amazon.com/blogs/contact-center/category/post-types/thought-leadership/ "View all posts in Thought Leadership")  [Permalink](https://aws.amazon.com/blogs/contact-center/the-future-of-customer-service-is-here-from-contact-centers-to-experience-hubs/)  [Share](https://aws.amazon.com/blogs/contact-center/the-future-of-customer-service-is-here-from-contact-centers-to-experience-hubs/#)
 
----
+Discover how Amazon Connect transforms traditional contact centers into AI-powered experience hubs that reduce costs, increase efficiency, and deliver personalized customer experiences at scale.
 
-## Architecture Guidance
+In 2017, we launched  [Amazon Connect](https://aws.amazon.com/connect/)  to solve the challenges we conquered in Amazon’s own customer service operations. Our mission: deliver simple, cost-effective technology that creates exceptional customer experiences at any scale.
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”
+Today, AWS customers use Amazon Connect to support more than 10 million contact center interactions every day. But this is just the beginning. Our vision demands a fundamental shift in thinking: contact centers are no longer mere responsive hubs – they are experience centers that revolutionize how customers and businesses interact.
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+This transformation represents a seismic shift in customer engagement. Traditional contact centers wait for customer problems; experience centers anticipate and prevent them. Where contact centers focus on resolution times, experience centers create meaningful connections. This isn’t just an evolution in technology – it’s a revolution in relationship building between brands and their customers.
 
-**The solution architecture is now as follows:**
+Imagine a world where every customer interaction is a perfectly orchestrated symphony of human empathy and AI intelligence, anticipating needs before they’re expressed. A world where geographical boundaries dissolve as AI-empowered experts delivers flawless service, making every customer feel locally served, regardless of location. Picture service environments as living organisms, constantly learning, healing, and evolving – where every interaction enhances the entire system’s intelligence. We understand customer journeys so profoundly that we craft magical moments of delight, transforming routine interactions into unforgettable experiences. Building conversational flows becomes as natural as thought itself, where human creativity and data capabilities continuously reinvent AI-powered customer experiences.
 
-> *Figure 1. Overall architecture; colored boxes represent distinct services.*
+This is the future we’re creating with  [Amazon Connect](https://aws.amazon.com/connect/).
 
----
+### **Our path forward: Four transformational areas reshaping customer service.**
 
-While the term *microservices* has some inherent ambiguity, certain traits are common:  
-- Small, autonomous, loosely coupled  
-- Reusable, communicating through well-defined interfaces  
-- Specialized to do one thing well  
-- Often implemented in an **event-driven architecture**
+1/ The power of predicting and resolving customer intent remains core to our agentic AI vision, with our  [agent assistance](https://aws.amazon.com/connect/q/)  empowering agents to deliver faster, more accurate responses. The result is a truly personalized, automated conversational self-service experience that sets new standards in customer engagement.
 
-When determining where to draw boundaries between microservices, consider:  
-- **Intrinsic**: technology used, performance, reliability, scalability  
-- **Extrinsic**: dependent functionality, rate of change, reusability  
-- **Human**: team ownership, managing *cognitive load*
+2/ Our unified customer intelligence approach breaks down traditional data silos through real-time profile unification across all touchpoints. By leveraging predictive analytics to anticipate customer needs and orchestrating seamless journeys across all channels, we enable proactive engagement based on customer signals, creating a truly unified customer experience.
 
----
+3/ Global scale and reliability form the backbone of Amazon Connect through active-active deployment across multiple regions. Enhanced global telephony coverage combines with simplified capacity management to deliver unified and reliable global operations, ensuring consistent service delivery worldwide.
 
-## Technology Choices and Communication Scope
+4/ Agent empowerment transforms the frontline experience through AI-powered assistance for every interaction, including real-time coaching guidance, and generates deep insights from customer conversations. A unified workspace for all channels streamlines operations, while automated coaching and development features enhance agent capabilities. Simplified tools and workflows reduce complexity, allowing agents to focus on delivering exceptional customer service.
 
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+### The paradigm shift
 
----
+This transformation from contact centers to experience centers fundamentally changes business-customer relationships. Experience centers become strategic assets that drive business growth, not cost centers to be optimized. They transform from problem-solving facilities into opportunity-creating engines that:
 
-## The Pub/Sub Hub
+– Generate real-time customer insights that inform product development
 
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.  
-- Each microservice depends only on the *hub*  
-- Inter-microservice connections are limited to the contents of the published message  
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous *push*
+– Create proactive engagement opportunities that drive sales
 
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
+– Build deeper emotional connections with customers through personalized experiences
 
----
+– Turn service interactions into brand advocacy moments
 
-## Core Microservice
+Organizations that embrace this shift can gain a powerful competitive advantage. They don’t just respond to customer needs – they anticipate and exceed them, creating experiences that customers actively seek out rather than interactions they merely tolerate.
 
-Provides foundational data and communication layer, including:  
-- **Amazon S3** bucket for data  
-- **Amazon DynamoDB** for data catalog  
-- **AWS Lambda** to write messages into the data lake and catalog  
-- **Amazon SNS** topic as the *hub*  
-- **Amazon S3** bucket for artifacts such as Lambda code
+### **Why this matters**
 
-> Only allow indirect write access to the data lake through a Lambda function → ensures consistency.
+The customer experience reaches new heights through personalized service across all channels, faster issue resolution, and reduced customer effort. Proactive engagement anticipates and addresses customer needs before they become concerns, creating seamless interactions that build lasting relationships.
 
----
+The agent experience sees a dramatic improvement as seen with TransUnion,  [a 40%+ savings in annual costs](https://aws.amazon.com/connect/q/). Reduced training time and higher job satisfaction lead to better customer outcomes, creating a positive cycle of continuous improvement and excellence in service delivery.
 
-## Front Door Microservice
+Business agility becomes a competitive advantage through rapid innovation and experimentation capabilities. Organizations can quickly adapt to market changes, leverage global operational flexibility, and implement continuous improvements to stay ahead of evolving customer expectations.
 
-- Provides an API Gateway for external REST interaction  
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**  
-- Self-managed *deduplication* mechanism using DynamoDB instead of SNS FIFO because:  
-  1. SNS deduplication TTL is only 5 minutes  
-  2. SNS FIFO requires SQS FIFO  
-  3. Ability to proactively notify the sender that the message is a duplicate  
+### **Real results, real impact**
 
----
+[Intuit’s](https://aws.amazon.com/solutions/case-studies/intuit-contact-center-case-study/)  flexibly scales its contact center from 6,000 to 11,000 agents during tax season with pay-per-use pricing, while maintaining capacity for up to 20,000 agents. Capital One’s CIO Gill Haus emphasized the value of their tech-focused approach,  [stating](https://aws.amazon.com/connect/customers/), “_Amazon Connect enables us to innovate like a tech company, meeting customer needs with speed and agility in a rapidly changing industry_.” The State of Rhode Island showcased unparalleled  [speed](https://aws.amazon.com/blogs/publicsector/chatbots-call-centers-connecting-citizens-critical-times/)  by deploying their entire contact center in just 10 days, successfully handling 75,000 unemployment claims on day one.
 
-## Staging ER7 Microservice
+### **The path forward**
 
-- Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 → JSON  
-- Two Lambdas:  
-  1. Fix ER7 formatting (newline, carriage return)  
-  2. Parsing logic  
-- Result or error is pushed back into the pub/sub hub  
+As we look to 2025 and beyond, our commitment focuses on expanding the boundaries of AI in customer service, simplifying and enhancing global operations reliability, creating more personalized and proactive customer experiences, empowering agents to deliver exceptional service, and enabling rapid innovation and experimentation.
 
----
+### **Join us on this journey**
 
-## New Features in the Solution
+The future of customer service is unfolding now with Amazon Connect, where contact centers evolve into experience centers that redefine customer engagement. This isn’t just about better service – it’s about creating a new paradigm for business-customer relationships. Be part of this transformation, where exceptional customer experiences become the standard and every interaction strengthens the bond between customer and brand.
 
-### 1. AWS CloudFormation Cross-Stack References
-Example *outputs* in the core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+Together, we will make every customer interaction better than the last, turning routine touchpoints into opportunities for meaningful connection and growth. The question isn’t whether to make this transformation, but how quickly you can lead it in your industry.
+
+Ready to revolutionize your customer experience?  [Connect with our team today](https://aws.amazon.com/contact-us/)  to start your transformation journey – the future of service can’t wait.
