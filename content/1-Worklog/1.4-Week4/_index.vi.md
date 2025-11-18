@@ -1,59 +1,15 @@
-﻿---
-title: "Worklog Tuần 4"
-date: 2025-11-18
-weight: 1
-chapter: false
-pre: " <b> 1.4. </b> "
----
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 4 (từ ngày 29/09/2025 - 03/10/2025)
 
-### Mục tiêu tuần 4:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu rõ các dịch vụ lưu trữ trên AWS 
+* Thành thạo việc triển khai S3 và chiến lược sao lưu toàn diện với AWS Backup
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 4:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+| Thứ | Công việc | Nguồn tài liệu |
+| :---: | :--- | :--- |
+| **Thứ 2** | - Tìm hiểu về các dịch vụ lưu trữ trên AWS <br>&emsp; + Amazon Simple Storage Service - S3<br>&emsp; +  Amazon Storage Gateway <br>&emsp; +  Snow Family: Snowball, Snowball Edge, Snowmobile<br>&emsp; +  Các chiến lược phục hồi thảm họa trên AWS: sao lưu và khôi phục, pilow light, low capacity active-active, full capacity active-active<br>&emsp; +  AWS Backup |  |
+| **Thứ 3** | - Thực hành trên S3 bucket <br>  &emsp; +  Chuẩn bị: tạo S3 bucket và tải dữ liệu<br>  &emsp; + Bật tính năng Static website <br>  &emsp; + Cấu hình Block Public Access và public object<br>  &emsp; + Kiểm tra web, tăng tốc static web với Cloudfront<br>  &emsp; + Di chuyển Object và sao chép S3 Object sang region khác| <https://000057.awsstudygroup.com/> |
+| **Thứ 4** |- Triển khai AWS Backup vào hệ thống: chuẩn bị hạ tầng, khởi tạo Backup Plan, thiết lập Notification và kiểm tra hoạt động <br> - Thực hành VM Import/Export: chuẩn bị máy ảo, import máy ảo lên AWS và export máy ảo từ AWS |<https://000013.awsstudygroup.com/> <https://000014.awsstudygroup.com/> |
+| **Thứ 5** | - Triển khai File Storage Gateway để thiết lập một File Sharing kết nối với các máy ở On-premise  <br>  &emsp; + Chuẩn bị môi trường: tạo S3 Bucket và tạo EC2 cho Storage Gateway <br>  &emsp; +  Sử dụng AWS Storage Gateway: tạo Storage Gateway, tạo File Shares, kết nối File Shares ở máy Onpremise |<https://000024.awsstudygroup.com/> |
+| **Thứ 6** |- Thiết lập hệ thống lưu trữ dữ liệu chung cho cơ sở hạ tầng Windows với FSX<br>  &emsp; +  Tạo môi trường thực hành, SSD Multi-AZ file system và HDD Multi-AZ file system <br>  &emsp; + Tạo file share<br>  &emsp; +  Kiểm tra và giám sát hiệu năng <br>  &emsp; +  Quản lý session người dùng và mở tệp <br>  &emsp; + Kích hoạt hạn ngạch bộ nhớ của người dùng và kích hoạt truy cập chia sẻ liên tục <br>  &emsp; +  Mở rộng khả năng thông lượng và mở rộng dung lượng lưu trữ file    | <https://000025.awsstudygroup.com/>| 
 

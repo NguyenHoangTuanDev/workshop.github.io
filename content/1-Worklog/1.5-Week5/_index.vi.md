@@ -1,59 +1,15 @@
-﻿---
-title: "Worklog Tuần 5"
-date: 2025-11-18
-weight: 1
-chapter: false
-pre: " <b> 1.5. </b> "
----
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 5 (từ ngày 06/10/2025 - 10/10/2025)
 
-### Mục tiêu tuần 5:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu được các dịch vụ bảo mật trên AWS 
+* Nắm được các nguyên tắc của IAM (Role, Policy) để quản lý truy cập an toàn
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 5:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+| Thứ | Công việc | Nguồn tài liệu |
+| :---: | :--- | :--- |
+| **Thứ 2** | - Tìm hiểu về các dịch vụ bảo mật trên AWS <br>&emsp; +  Shared Responsibility Model,<br>&emsp; + AWS Identity và Access Management <br>&emsp; + Amazon Cognito|  |
+| **Thứ 3** | - Thực hiện kiểm soát truy cập với IAM:  <br>&emsp; + Tạo IAM Group và IAM User: tạo Admin Group, Admin User, đăng nhập tài khoản Admin User <br>&emsp; + Tạo IAM Role và IAM User: tạo Admin Role, Operator User <br>&emsp; + Chuyển đổi IAM Role| <https://000002.awsstudygroup.com/> |
+| **Thứ 4** |- Đọc lại lý thuyết về IAM<br>- Thực hành IAM Role và Condition <br>&emsp; + Tạo User quản trị EC2, RDS<br>&emsp; + Tạo Group quản trị<br>&emsp; + Cấu hình IAM Role Condition: tạo IAM Role có quyền admin, hạn chế quyền truy cập vai trò bằng cách cấu hình switch role giới hạn theo ip và giới hạn theo thời gian|<https://000044.awsstudygroup.com/>  |
+| **Thứ 5** | -Cấp quyền cho ứng dụng truy cập dịch vụ AWS với vai trò IAM <br>&emsp; + Tạo EC2 instance và S3 bucket <br>&emsp; + Tạo IAM User và Access key, sử dụng Accesskey <br>&emsp; + Tạo và sử dụng IAM role trên EC2 |<https://000048.awsstudygroup.com/> |
+| **Thứ 6** |- Giới hạn quyền người dùng với IAM Permission Boundary<br>&emsp; + Tạo Policy giới giạn <br>&emsp; + Tạo IAM user giới hạn quyền <br>&emsp; + Kiểm tra user bị giới hạn| <https://000030.awsstudygroup.com/>| 
 

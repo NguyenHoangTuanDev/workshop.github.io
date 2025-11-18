@@ -1,59 +1,14 @@
-﻿---
-title: "Worklog Tuần 8"
-date: 2025-11-18
-weight: 1
-chapter: false
-pre: " <b> 1.8. </b> "
----
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 8 (từ ngày 27/10/2025 - 31/10/2025)
 
-### Mục tiêu tuần 8:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Thực hành phân tích dữ liệu trên AWS
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 8:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+| Thứ | Công việc | Nguồn tài liệu |
+| :---: | :--- | :--- |
+| **Thứ 2** | - Tìm hiểu về khái niệm và các tính chất của Data Lake <br> - Thực hiện khám phá, phân tích và thống kê dữ liệu <br>&emsp; + Tạo IAM Role dành cho AWS Glue, tạo policy <br>&emsp; + Thu thập và lưu trữ dữ liệu: tạo S3 Bucket, Tạo luồng phân phối,tạo dữ liệu mẫu <br>&emsp; +  Tạo danh mục dữ liệu: tạo Glue Crawler và kiểm tra dữ liệu|  <https://000035.awsstudygroup.com/> |
+| **Thứ 3** | - Tiếp tục bài thực hành về dữ liệu  <br>&emsp; + Thực hiện chuyển đổi dữ liệu với 2 cách tạo SageMaker Notebook: AWS Studio và AWS Management Console,  chạy và hiểu code trong phần thực hành   | <https://000035.awsstudygroup.com/>|
+| **Thứ 4** |-Tìm hiểu về Amazon Athena và Amazon QuickSight<bt> - Thực hiện truy vấn dữ liệu với Amazon Athena và biểu diễn dữ liệu với Amazon QuickSight  |<https://000035.awsstudygroup.com/>  |
+| **Thứ 5** |Phân tích chi phí và hiệu suất với AWS Glue và Amazon Athena <br> - Các bước chuẩn bị <br>&emsp; + Chuẩn bị cơ sở dữ liệu: sử dụng dữ liệu có sẵn về AWS Cost & Usage Report, tạo S3 bucket, tạo folder lưu trữ và upload các file dữ liệu <br>&emsp; + Xây dựng cơ sở dữ liệu: cấu hình Amazon Athena để truy cập file dữ liệu thông qua AWS Glue <br>&emsp; + Kiểm tra cơ sở dữ liệu <br> - Phân tích chi phí và hiệu năng sử dụng của hệ thống bằng các lệnh truy vấn SQL với Amazon Athena  <br>&emsp; + Nghiên cứu về dữ liệu trong bảng <br>&emsp; + Nghiên cứu chi phí <br>&emsp; + Tối ưu hóa phân bổ chi phí và đo lường hiệu quả công việc với tag<br>&emsp; + Xem và so sánh kết quả chi phí khi sử dụng EC2 theo kiểu Savings Plans hoặc Reserved Instance so với kiểu On Demand  |<https://000040.awsstudygroup.com/> |
+| **Thứ 6** |- Ôn tập lại các nội dung lý thuyết và thực hành đã thực hiện trong tuần | | 
 

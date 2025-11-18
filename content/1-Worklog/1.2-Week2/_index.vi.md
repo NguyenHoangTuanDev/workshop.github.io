@@ -1,59 +1,15 @@
-﻿---
-title: "Worklog Tuần 2"
-date: 2025-11-18
-weight: 1
-chapter: false
-pre: " <b> 1.2. </b> "
----
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 2 (từ ngày 15/09/2025 - 19/09/2025)
 
-### Mục tiêu tuần 2:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu rõ các dịch vụ mạng trên AWS 
+* Thành thạo việc thiết lập, cấu hình VPC, VPC Peering, Transit Gateway, Hybrid DNS
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 2:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+| Thứ | Công việc | Nguồn tài liệu |
+| :---: | :--- | :--- |
+| **Thứ 2** | - Tìm hiểu về dịch vụ mạng trên AWS <br> - Tìm hiểu về Amazon Virtual Private Cloud (VPC) <br>&emsp; + Subnet<br>&emsp; + Route Table<br>&emsp; +Elastic Network Interface<br>&emsp; + Elastic IP Adress<br>&emsp; + VPC Endpoint<br>&emsp; + Internet Gateway<br>&emsp; + NAT Gateway <br> - Tìm hiểu lý thuyết về VPN & Direct Connect <br>&emsp; + VPN Site to Site <br>&emsp; +AWS Direct Connect <br> - Xem lý thuyết về Elastic Load Balancing  | <https://youtu.be/O9Ac_vGHquM?si=oQBDke9m6FJXdrhc> <br> <https://youtu.be/BPuD1l2hEQ4?si=XHzAkIC6HG-mFRBj><br> <https://youtu.be/CXU8D3kyxIc?si=B08A98ymh5vYXJ7a> |
+| **Thứ 3** | - Tìm hiểu về bảo mật VPC và tính năng multi-VPC features <br>&emsp; + Security Group (SG) <br>&emsp; + Network Acess Control List (NACL) <br>&emsp; + VPC flow Logs<br>&emsp; + Tính năng VPC Peering <br>&emsp; + Transit Gateway <br> - Thực hành tạo VPC, cấu hình Site to Site VPC | <https://000003.awsstudygroup.com/> |
+| **Thứ 4** | Thiết lập VPC Peering <br> - Cập nhật Network ACL <br> - Tạo kết nối Peering<br> - Cấu hình Route Tables <br> - Kích hoạt Cross-Peer DNS| <https://000019.awsstudygroup.com/> |
+| **Thứ 5** | Thiết lập Transit Gateway<br> - Chuẩn bị: khởi tạo CloudFormation, tạo nhóm bảo mật, khởi chạy các EC2 Instance, thiết lập hạ tầng <br> - Tạo Transit Gateway<br> - Tạo Transit Gateway Attachments<br> - Tạo Route Table cho TGW, thêm Transit Gateway vào VPC Route Table và kiểm tra kết quả.|<https://000020.awsstudygroup.com/> |
+| **Thứ 6** | - Tìm hiểu về dịch vụ Amazon Route 53 <br> - Thiết lập Hybrid DNS  <br>&emsp; + Tạo Route 53 Outbound Endpoint <br>&emsp; +Route 53 Resolve Rules <br>&emsp; + Route 53 Inbound Endpoints | <https://000010.awsstudygroup.com/> | 
 

@@ -1,58 +1,17 @@
-﻿---
-title: "Worklog Tuần 6"
-date: 2025-11-18
-weight: 1
-chapter: false
-pre: " <b> 1.6. </b> "
----
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 6 (từ ngày 13/10/2025 - 17/10/2025)
 
-### Mục tiêu tuần 6:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tiếp tục tìm hiểu về các dịch vụ bảo mật trên AWS
+* Hiểu cách hoạt động của Security Hub  
+* Hiểu về mã hóa tĩnh,mã hóa động và cách quản lý khóa bằng KMS
+* Tổng ôn nội dung của Module 5
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+| Thứ | Công việc | Nguồn tài liệu |
+| :---: | :--- | :--- |
+| **Thứ 2** | - Tìm hiểu về các dịch vụ bảo mật trên AWS<br>&emsp; + AWS Organization & AWS Identity Center<br>&emsp; + AWS KMS <br>&emsp; + AWS Security Hub |  |
+| **Thứ 3** | - Thực hiện lại bài thực hành vềquản lý quyền truy cập vào các dịch vụ EC2 với  Tag và Resource Groups thông qua dịch vụ IAM đã thực hiện ở tuần 3: <br>&emsp; + Sử dụng tag: sử dụng tag bằng console, hiển thị, thêm hoặc xóa các thẻ, gắn thẻ cho một máy ảo, lọc tài nguyên cho thẻ và sử dụng thẻ bằng CLI<br>&emsp; + Sử dụng Resource Group| <https://0000027.awsstudygroup.com/> |
+| **Thứ 4** |- Đọc tài liệu và thực hiện mã hóa khi lưu trữ với KMS<br>&emsp; + Thiết lập môi trường: tạo policy, role, group và user <br>&emsp; + Tạo dịch vụ quản lý khóa KMS<br>&emsp; + Tạo Amazon S3<br>&emsp; + Mã hóa với AWS KMS<br>&emsp; +  Tạo AWS CloudTrail và Amazon Athena <br>&emsp; + Kiểm tra và chia sẻ dữ liệu được mã hóa trên S3 |<https://000033.awsstudygroup.com/>  |
+| **Thứ 5** | -Sử dụng AWS Security Hub <br>&emsp; + Đọc về các tiêu chuẩn bảo mật<br>&emsp; + Kích hoạt Security Hub <br>&emsp; +  Kiểm tra và đánh giá từng bộ tiêu chuẩn|<https://000018.awsstudygroup.com/> |
+| **Thứ 6** |- Ôn tập lại các nội dung lý thuyết và thực hành của Module 5  | | 
 

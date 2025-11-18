@@ -1,59 +1,14 @@
-﻿---
-title: "Worklog Tuần 9"
-date: 2025-11-18
-weight: 1
-chapter: false
-pre: " <b> 1.9. </b> "
----
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 9 (từ ngày 03/11/2025 - 07/11/2025)
 
-### Mục tiêu tuần 9:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tiếp tục các bài thực hành phân tích dữ liệu trên AWS
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 9:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+| Thứ | Công việc | Nguồn tài liệu |
+| :---: | :--- | :--- |
+| **Thứ 2** | - Tìm hiểu về dịch vụ cơ sở dữ liệu NoSQL Amazon DynamoDB <br>&emsp; + Các thành phần cốt lõi của Amazon DynamoDB: item, table, attribute <br>&emsp; + Primary Key: partition key, composite primary key<br>&emsp; + Secondary Index<br>&emsp; + Quy tắc đặc tên và kiểu dữ liệu<br>&emsp; +Read Consistency <br>&emsp; +Read/Write Capacity Mode<br> - Sử dụng cả hai cách AWS Management Console và AWS CloudShell để thực hiện các bước chuẩn bị như tạo table, ghi - đọc - cập nhật - truy vấn dữ liệu, tạo và truy vấn Global secondary index   <br> Thực hành với AWS SDK  <br>&emsp; + Cấu hình AWS CLI  <br>&emsp; + Sử dụng AWS SDKcho Python để viết các chương trình thực hiện các hoạt động của Amazon DynamoDB |  <https://000060.awsstudygroup.com/> |
+| **Thứ 3** |Thực hiện workshop về Analytics theo hướng dẫn <br> - Chuẩn bị: tạo S3 bucket<br> - Nhập và lưu trữ:  <br>&emsp; +Tạo  Kinesis Amazon Data Firehose <br>&emsp; + Tạo dummy data <br> - Catalog Data: tạo IAM Role, AWS Glue Crawlers và xác minh các bảng vừa tạo trong catalog<br> - Chuyển đổi dữ liệu với Glue(interactive sessions) <br> - Chuyển đổi dữ liệu với AWS Glue DataBrew <br> - Chuyển đổi dữ liệu với EMR | <https://000072.awsstudygroup.com/>|
+| **Thứ 4** |Tiếp tục thực hiện Workshop về Analytics <br> - Phân tích với Athena<br> - Phân tích với Kinesis Data Analytics<br> - Hiển thị dữ liệu trong Quicksight <br> Thiết lập một Amazon Redshift cluster và sử dụng AWS Glue để tải dữ liệu vào Amazon Redshift |<https://000072.awsstudygroup.com/>  |
+| **Thứ 5** |- Xây dựng bảng điều khiển để trực quan hóa dữ liệu với Amazon QuickSight <br>&emsp; + Đăng ký QuickSight <br>&emsp; + Xây dựng dashboard: cập nhật Dataset, tạo các biểu đồ đường thẳng, KPI và Insights, biểu đồ tròn, tạo pivot table và hoàn thiện dashboard  <br>&emsp; +Cải tiến dashboard bằng cách định dạng, bổ sung các biểu đồ và bảng dữ liệu chi tiết  |<https://000073.awsstudygroup.com/> |
+| **Thứ 6** |- Tổng ôn  các nội dung lý thuyết và thực hành trong toàn bộ Module 7| | 
 
