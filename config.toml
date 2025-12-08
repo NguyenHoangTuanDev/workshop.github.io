@@ -1,6 +1,6 @@
-baseURL = "https://nguyenhoangtuandev.github.io/workshop.github.io/"
-relativeURLs = true
-canonifyURLs = false
+baseURL = "https://nguyenhoangtuandev.github.io/workshop.github.io"
+relativeURLs = false
+canonifyURLs = true
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
