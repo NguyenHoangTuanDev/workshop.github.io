@@ -42,7 +42,7 @@ Chi phí hạ tầng ước tính cho 1 môi trường nhỏ khoảng **8–12 U
 ### 3. Kiến trúc giải pháp  
 Giải pháp sử dụng kiến trúc AWS như sau:
 
-![Kiến trúc dự đoán Customer Churn](/workshop.github.io/images/2-Proposal/Streamlit.png)
+![Kiến trúc dự đoán Customer Churn](/images/2-Proposal/Streamlit.png)
 
 - **User (Web Browser)** → truy cập ứng dụng Streamlit qua endpoint public của EC2.  
 - **Amazon VPC + Security Group** → kiểm soát traffic vào/ra (HTTP/HTTPS hoặc port 8501).  

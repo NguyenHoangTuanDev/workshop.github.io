@@ -45,7 +45,7 @@ Estimated monthly cost for a small instance (e.g., t2.micro or t3.small) and lig
 ### 3. Solution Architecture
 The solution uses a straightforward AWS architecture for serving the churn model:
 
-![Customer Churn Prediction Architecture](/workshop.github.io/images/2-Proposal/Streamlit.png)
+![Customer Churn Prediction Architecture](/images/2-Proposal/Streamlit.png)
 
 - **User (Web Browser)** → accesses the Streamlit app via the EC2 public endpoint.  
 - **Amazon VPC + Security Group** → controls inbound traffic (e.g., HTTP/HTTPS or port 8501).  

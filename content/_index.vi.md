@@ -26,9 +26,9 @@ chapter: false
 
 &emsp; **Vị trí thực tập:** FCJ Cloud Intern
 
-&emsp; **Thời gian thực tập:** Từ ngày 29/09/2025 đến ngày 22/11/2025
+&emsp; **Thời gian thực tập:** Từ 29/09/2025 đến 22/11/2025
 
-![Ảnh đại diện thành viên 1](/workshop.github.io/images/avatar.png)
+![%nh đại diện thành viên 1](/images/avatar.png)
 
 ---
 
@@ -49,9 +49,9 @@ chapter: false
 
 &emsp; **Vị trí thực tập:** FCJ Cloud Intern
 
-&emsp; **Thời gian thực tập:** Từ ngày 29/09/2025 đến ngày 22/11/2025
+&emsp; **Thời gian thực tập:** Từ 29/09/2025 đến 22/11/2025
 
-![Ảnh đại diện thành viên 2](/workshop.github.io/images/avatar.png)
+![%nh đại diện thành viên 2](/images/avatar.png)
 
 ### Nội dung báo cáo
 

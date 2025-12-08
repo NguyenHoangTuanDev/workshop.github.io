@@ -29,7 +29,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 29/09/2025 to 22/11/2025
 
-![Member 1 profile picture](/workshop.github.io/images/avatar.png)
+![Member 1 profile picture](/images/avatar.png)
 
 ---
 
@@ -52,7 +52,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 29/09/2025 to 22/11/2025
 
-![Member 2 profile picture](/workshop.github.io/images/avatar.png)
+![Member 2 profile picture](/images/avatar.png)
 
 ### Report Content
 
