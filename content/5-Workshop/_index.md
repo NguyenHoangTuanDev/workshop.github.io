@@ -1,5 +1,5 @@
 ﻿---
-title: "Deploy ML Model on EC2"
+title: 'WorkShop'
 date: 2025-11-18
 weight: 5
 chapter: false

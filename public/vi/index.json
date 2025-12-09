@@ -147,18 +147,18 @@
 	"content": "Truy cập Web App Mở trình duyệt web trên máy tính của bạn.\nTruy cập vào đường dẫn: http://\u0026lt;Public-IP-Của-EC2\u0026gt;:8501\n(Ví dụ: http://13.214.148.217:8501)\nGiao diện ứng dụng dự đoán thẻ tín dụng sẽ hiện ra. Hãy thử nhập thông số và nhấn nút dự đoán.\n"
 },
 {
-	"uri": "https://nguyenhoangtuandev.github.io/workshop.github.io/vi/5-workshop/",
-	"title": "Triển khai ML Model trên EC2",
-	"tags": [],
-	"description": "",
-	"content": "Triển khai Mô hình Machine Learning với Streamlit trên EC2 Tổng quan Trong workshop này, bạn sẽ học cách triển khai một ứng dụng Machine Learning (dự đoán khách hàng thẻ tín dụng) sử dụng framework Streamlit và chạy trên hạ tầng Amazon EC2.\nThay vì sử dụng các dịch vụ phức tạp, chúng ta sẽ tối ưu hóa chi phí và quy trình bằng cách host toàn bộ ứng dụng (Front-end và Model) trực tiếp trên một EC2 instance chạy Ubuntu.\nKiến trúc Nội dung Tổng quan về workshop Các bước chuẩn bị Khởi tạo EC2 Instance Triển khai ứng dụng Kiểm tra kết quả Dọn dẹp tài nguyên "
-},
-{
 	"uri": "https://nguyenhoangtuandev.github.io/workshop.github.io/vi/1-worklog/1.5-week5/",
 	"title": "Tuần 5",
 	"tags": [],
 	"description": "",
 	"content": "Mục tiêu tuần 5 (từ ngày 06/10/2025 - 10/10/2025) Hiểu được các dịch vụ bảo mật trên AWS Nắm được các nguyên tắc của IAM (Role, Policy) để quản lý truy cập an toàn Các công việc cần triển khai trong tuần này: Thứ Công việc Nguồn tài liệu Thứ 2 - Tìm hiểu về các dịch vụ bảo mật trên AWS + Shared Responsibility Model,\n+ AWS Identity và Access Management + Amazon Cognito Thứ 3 - Thực hiện kiểm soát truy cập với IAM: + Tạo IAM Group và IAM User: tạo Admin Group, Admin User, đăng nhập tài khoản Admin User + Tạo IAM Role và IAM User: tạo Admin Role, Operator User + Chuyển đổi IAM Role https://000002.awsstudygroup.com/ Thứ 4 - Đọc lại lý thuyết về IAM\n- Thực hành IAM Role và Condition + Tạo User quản trị EC2, RDS\n+ Tạo Group quản trị\n+ Cấu hình IAM Role Condition: tạo IAM Role có quyền admin, hạn chế quyền truy cập vai trò bằng cách cấu hình switch role giới hạn theo ip và giới hạn theo thời gian https://000044.awsstudygroup.com/ Thứ 5 -Cấp quyền cho ứng dụng truy cập dịch vụ AWS với vai trò IAM + Tạo EC2 instance và S3 bucket + Tạo IAM User và Access key, sử dụng Accesskey + Tạo và sử dụng IAM role trên EC2 https://000048.awsstudygroup.com/ Thứ 6 - Giới hạn quyền người dùng với IAM Permission Boundary\n+ Tạo Policy giới giạn + Tạo IAM user giới hạn quyền + Kiểm tra user bị giới hạn https://000030.awsstudygroup.com/ "
+},
+{
+	"uri": "https://nguyenhoangtuandev.github.io/workshop.github.io/vi/5-workshop/",
+	"title": "WorkShop",
+	"tags": [],
+	"description": "",
+	"content": "Triển khai Mô hình Machine Learning với Streamlit trên EC2 Tổng quan Trong workshop này, bạn sẽ học cách triển khai một ứng dụng Machine Learning (dự đoán khách hàng thẻ tín dụng) sử dụng framework Streamlit và chạy trên hạ tầng Amazon EC2.\nThay vì sử dụng các dịch vụ phức tạp, chúng ta sẽ tối ưu hóa chi phí và quy trình bằng cách host toàn bộ ứng dụng (Front-end và Model) trực tiếp trên một EC2 instance chạy Ubuntu.\nKiến trúc Nội dung Tổng quan về workshop Các bước chuẩn bị Khởi tạo EC2 Instance Triển khai ứng dụng Kiểm tra kết quả Dọn dẹp tài nguyên "
 },
 {
 	"uri": "https://nguyenhoangtuandev.github.io/workshop.github.io/vi/3-blogstranslated/3.6-blog6/",
