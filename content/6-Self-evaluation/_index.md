@@ -1,3 +1,11 @@
+---
+title: "Self-evaluation"
+date: 2025-11-18
+weight: 6
+chapter: false
+pre: " <b> 6. </b> "
+---
+
 Throughout my internship at **AMAZON WEB SERVICES VIETNAM COMPANY LIMITED** from **08/09/2025** to **22/11/2025**, I had the opportunity to experience the work environment, practice, and apply the knowledge acquired at school to a practical project. At the same time, I also learned much new knowledge through various learning modules.
 
 Regarding my work conduct, I always strived to complete tasks well and comply with the established regulations.

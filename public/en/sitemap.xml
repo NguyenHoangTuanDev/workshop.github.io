@@ -249,6 +249,19 @@
                 href="https://nguyenhoangtuandev.github.io/workshop.github.io/3-blogstranslated/3.6-blog6/"
                 />
   </url><url>
+    <loc>https://nguyenhoangtuandev.github.io/workshop.github.io/6-self-evaluation/</loc>
+    <lastmod>2025-11-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://nguyenhoangtuandev.github.io/workshop.github.io/vi/6-self-evaluation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nguyenhoangtuandev.github.io/workshop.github.io/6-self-evaluation/"
+                />
+  </url><url>
     <loc>https://nguyenhoangtuandev.github.io/workshop.github.io/1-worklog/1.6-week6/</loc>
     <lastmod>2025-11-18T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -351,18 +364,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://nguyenhoangtuandev.github.io/workshop.github.io/1-worklog/1.12-week12/"
-                />
-  </url><url>
-    <loc>https://nguyenhoangtuandev.github.io/workshop.github.io/6-self-evaluation/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://nguyenhoangtuandev.github.io/workshop.github.io/vi/6-self-evaluation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nguyenhoangtuandev.github.io/workshop.github.io/6-self-evaluation/"
                 />
   </url><url>
     <loc>https://nguyenhoangtuandev.github.io/workshop.github.io/categories/</loc>

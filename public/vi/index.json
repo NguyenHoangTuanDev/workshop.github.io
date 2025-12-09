@@ -140,6 +140,13 @@
 	"content": "Mục tiêu tuần 6 (từ ngày 13/10/2025 - 17/10/2025) Tiếp tục tìm hiểu về các dịch vụ bảo mật trên AWS Hiểu cách hoạt động của Security Hub Hiểu về mã hóa tĩnh,mã hóa động và cách quản lý khóa bằng KMS Tổng ôn nội dung của Module 5 Các công việc cần triển khai trong tuần này: Thứ Công việc Nguồn tài liệu Thứ 2 - Tìm hiểu về các dịch vụ bảo mật trên AWS\n+ AWS Organization \u0026amp; AWS Identity Center\n+ AWS KMS + AWS Security Hub Thứ 3 - Thực hiện lại bài thực hành vềquản lý quyền truy cập vào các dịch vụ EC2 với Tag và Resource Groups thông qua dịch vụ IAM đã thực hiện ở tuần 3: + Sử dụng tag: sử dụng tag bằng console, hiển thị, thêm hoặc xóa các thẻ, gắn thẻ cho một máy ảo, lọc tài nguyên cho thẻ và sử dụng thẻ bằng CLI\n+ Sử dụng Resource Group https://0000027.awsstudygroup.com/ Thứ 4 - Đọc tài liệu và thực hiện mã hóa khi lưu trữ với KMS\n+ Thiết lập môi trường: tạo policy, role, group và user + Tạo dịch vụ quản lý khóa KMS\n+ Tạo Amazon S3\n+ Mã hóa với AWS KMS\n+ Tạo AWS CloudTrail và Amazon Athena + Kiểm tra và chia sẻ dữ liệu được mã hóa trên S3 https://000033.awsstudygroup.com/ Thứ 5 -Sử dụng AWS Security Hub + Đọc về các tiêu chuẩn bảo mật\n+ Kích hoạt Security Hub + Kiểm tra và đánh giá từng bộ tiêu chuẩn https://000018.awsstudygroup.com/ Thứ 6 - Ôn tập lại các nội dung lý thuyết và thực hành của Module 5 "
 },
 {
+	"uri": "https://nguyenhoangtuandev.github.io/workshop.github.io/vi/6-self-evaluation/",
+	"title": "Tự đánh giá",
+	"tags": [],
+	"description": "",
+	"content": "Trong suốt thời gian thực tập tại CÔNG TY TNHH AMAZON WEB SERVICES VIỆT NAM từ 08/09/2025 đến 22/11/2025, em đã có cơ hội trải nghiệm môi trường làm việc, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào dự án thực tế. Đồng thời, em cũng được học thêm nhiều kiến thức mới qua các module bài học.\nVề tác phong, em luôn cố gắng hoàn thành tốt nhiệm vụ, tuân thủ nội quy đã đề ra.\nĐể phản ánh một cách khách quan quá trình thực tập, em xin tự đánh giá bản thân dựa trên các tiêu chí dưới đây:\nSTT Tiêu chí Mô tả Tốt Khá Trung bình 1 Kiến thức và kỹ năng chuyên môn Hiểu biết về ngành, áp dụng kiến thức vào thực tế, kỹ năng sử dụng công cụ, chất lượng công việc ✅ ☐ ☐ 2 Khả năng học hỏi Tiếp thu kiến thức mới, học hỏi nhanh ☐ ✅ ☐ 3 Chủ động Tự tìm hiểu, nhận nhiệm vụ mà không chờ chỉ dẫn ✅ ☐ ☐ 4 Tinh thần trách nhiệm Hoàn thành công việc đúng hạn, đảm bảo chất lượng ✅ ☐ ☐ 5 Kỷ luật Tuân thủ giờ giấc, nội quy, quy trình làm việc ☐ ✅ ☐ 6 Tính cầu tiến Sẵn sàng nhận feedback và cải thiện bản thân ✅ ☐ ☐ 7 Giao tiếp Trình bày ý tưởng, báo cáo công việc rõ ràng ☐ ✅ ☐ 8 Hợp tác nhóm Làm việc hiệu quả với đồng nghiệp, tham gia nhóm ☐ ✅ ☐ 9 Ứng xử chuyên nghiệp Tôn trọng đồng nghiệp, đối tác, môi trường làm việc ✅ ☐ ☐ 10 Tư duy giải quyết vấn đề Nhận diện vấn đề, đề xuất giải pháp, sáng tạo ☐ ✅ ☐ 11 Đóng góp vào dự án/tổ chức Hiệu quả công việc, sáng kiến cải tiến, ghi nhận từ team ☐ ✅ ☐ 12 Tổng thể Đánh giá chung về toàn bộ quá trình thực tập ✅ ☐ ☐ Cần cải thiện Cải thiện trong cách tư duy giải quyết vấn đề Cởi mở, học cách giao tiếp hằng ngày và trong công việc, học cách xử lý tình huống "
+},
+{
 	"uri": "https://nguyenhoangtuandev.github.io/workshop.github.io/vi/7-feedback/",
 	"title": "Chia sẻ và Phản hồi",
 	"tags": [],
@@ -187,13 +194,6 @@
 	"tags": [],
 	"description": "",
 	"content": "Tuần 12 (từ ngày 24/11/2025 - 28/11/2025): Tiếp tục thực hiện và tối ưu nội dung Workshop "
-},
-{
-	"uri": "https://nguyenhoangtuandev.github.io/workshop.github.io/vi/6-self-evaluation/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": "Trong suốt thời gian thực tập tại CÔNG TY TNHH AMAZON WEB SERVICES VIỆT NAM từ 08/09/2025 đến 22/11/2025, em đã có cơ hội trải nghiệm môi trường làm việc, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào dự án thực tế. Đồng thời, em cũng được học thêm nhiều kiến thức mới qua các module bài học.\nVề tác phong, em luôn cố gắng hoàn thành tốt nhiệm vụ, tuân thủ nội quy đã đề ra.\nĐể phản ánh một cách khách quan quá trình thực tập, em xin tự đánh giá bản thân dựa trên các tiêu chí dưới đây:\nSTT Tiêu chí Mô tả Tốt Khá Trung bình 1 Kiến thức và kỹ năng chuyên môn Hiểu biết về ngành, áp dụng kiến thức vào thực tế, kỹ năng sử dụng công cụ, chất lượng công việc ✅ ☐ ☐ 2 Khả năng học hỏi Tiếp thu kiến thức mới, học hỏi nhanh ☐ ✅ ☐ 3 Chủ động Tự tìm hiểu, nhận nhiệm vụ mà không chờ chỉ dẫn ✅ ☐ ☐ 4 Tinh thần trách nhiệm Hoàn thành công việc đúng hạn, đảm bảo chất lượng ✅ ☐ ☐ 5 Kỷ luật Tuân thủ giờ giấc, nội quy, quy trình làm việc ☐ ✅ ☐ 6 Tính cầu tiến Sẵn sàng nhận feedback và cải thiện bản thân ✅ ☐ ☐ 7 Giao tiếp Trình bày ý tưởng, báo cáo công việc rõ ràng ☐ ✅ ☐ 8 Hợp tác nhóm Làm việc hiệu quả với đồng nghiệp, tham gia nhóm ☐ ✅ ☐ 9 Ứng xử chuyên nghiệp Tôn trọng đồng nghiệp, đối tác, môi trường làm việc ✅ ☐ ☐ 10 Tư duy giải quyết vấn đề Nhận diện vấn đề, đề xuất giải pháp, sáng tạo ☐ ✅ ☐ 11 Đóng góp vào dự án/tổ chức Hiệu quả công việc, sáng kiến cải tiến, ghi nhận từ team ☐ ✅ ☐ 12 Tổng thể Đánh giá chung về toàn bộ quá trình thực tập ✅ ☐ ☐ Cần cải thiện Cải thiện trong cách tư duy giải quyết vấn đề Cởi mở, học cách giao tiếp hằng ngày và trong công việc, học cách xử lý tình huống "
 },
 {
 	"uri": "https://nguyenhoangtuandev.github.io/workshop.github.io/vi/categories/",

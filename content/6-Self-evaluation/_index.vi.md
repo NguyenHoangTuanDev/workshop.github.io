@@ -1,3 +1,11 @@
+---
+title: "Tự đánh giá"
+date: 2025-11-18
+weight: 6
+chapter: false
+pre: " <b> 6. </b> "
+---
+
 Trong suốt thời gian thực tập tại **CÔNG TY TNHH AMAZON WEB SERVICES VIỆT NAM** từ **08/09/2025** đến **22/11/2025**, em đã có cơ hội trải nghiệm môi trường làm việc, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào dự án thực tế. Đồng thời, em cũng được học thêm nhiều kiến thức mới qua các module bài học.
 
 Về tác phong, em luôn cố gắng hoàn thành tốt nhiệm vụ, tuân thủ nội quy đã đề ra.
