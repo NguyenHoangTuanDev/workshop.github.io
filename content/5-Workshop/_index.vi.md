@@ -1,28 +1,28 @@
 ﻿---
-title: "Workshop"
+title: "Triển khai ML Model trên EC2"
 date: 2025-11-18
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Secure Hybrid Access to S3 using VPC Endpoints
+# Triển khai Mô hình Machine Learning với Streamlit trên EC2
 
-#### Overview
+#### Tổng quan
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+Trong workshop này, bạn sẽ học cách triển khai một ứng dụng Machine Learning (dự đoán khách hàng thẻ tín dụng) sử dụng framework **Streamlit** và chạy trên hạ tầng **Amazon EC2**.
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
+Thay vì sử dụng các dịch vụ phức tạp, chúng ta sẽ tối ưu hóa chi phí và quy trình bằng cách host toàn bộ ứng dụng (Front-end và Model) trực tiếp trên một EC2 instance chạy Ubuntu.
 
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
-+ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-+ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
+#### Kiến trúc
 
-#### Content
+![Architecture Diagram](/images/5-Workshop/5.1-Workshop-overview/diagram.png)
 
-1. [Workshop overview](5.1-workshop-overview/)
-2. [Prerequiste](5.2-prerequiste/)
-3. [Access S3 from VPC](5.3-s3-vpc/)
-4. [Access S3 from On-premises](5.4-s3-onprem/)
-5. [VPC Endpoint Policies (Bonus)](5.5-policy/)
-6. [Clean up](5.6-cleanup/)
+#### Nội dung
+
+1. [Tổng quan về workshop](5.1-workshop-overview/)
+2. [Các bước chuẩn bị](5.2-prerequiste/)
+3. [Khởi tạo EC2 Instance](5.3-launch-ec2/)
+4. [Triển khai ứng dụng](5.4-deploy-app/)
+5. [Kiểm tra kết quả](5.5-test-app/)
+6. [Dọn dẹp tài nguyên](5.6-cleanup/)

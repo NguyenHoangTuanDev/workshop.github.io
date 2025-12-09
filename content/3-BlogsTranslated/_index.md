@@ -6,7 +6,6 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-This section lists the blogs you have translated.
 
 ###  [Blog 1 - New general-purpose Amazon EC2 M8a instances are now available](3.1-Blog1/)
 

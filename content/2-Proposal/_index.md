@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
-
 # Customer Churn Prediction Platform on AWS
 ## A Machine Learning Deployment for Predicting Bank Customer Attrition
 

@@ -8,9 +8,6 @@ chapter: false
     
 # Internship Report
 
-### Team Members:
-
-#### Member 1:
 &emsp; **Full Name:** Nguyễn Hoàng Tuấn 
 
 &emsp; **Phone Number:** 0799559397
@@ -32,29 +29,6 @@ chapter: false
 ![Member 1 profile picture](/images/avatar.png)
 
 ---
-
-#### Member 2:
-&emsp; **Full Name:** Nguyễn Thị Thu Hoài
-
-&emsp; **Phone Number:** 0987654321 
-
-&emsp; **Email:** Bnguyenvan@gmail.com
-
-&emsp; **University:** Sai Gon University 
-
-&emsp; **Major:** Information Technology
-
-&emsp; **Class:** DCT121
-
-&emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
-
-&emsp; **Internship Position:** FCJ Cloud Intern
-
-&emsp; **Internship Duration:** From 29/09/2025 to 22/11/2025
-
-![Member 2 profile picture](/images/avatar.png)
-
-### Report Content
 
 1.  [Worklog](1-Worklog/)
 2.  [Proposal](2-Proposal/)

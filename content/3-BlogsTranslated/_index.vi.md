@@ -6,7 +6,6 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-Phần này liệt kê các bài blog bạn đã dịch.
 
 ###  [Blog 1 - Phiên bản Amazon EC2 M8a đa dụng mới hiện đã có sẵn](3.1-Blog1/)
 

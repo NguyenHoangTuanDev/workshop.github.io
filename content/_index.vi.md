@@ -7,9 +7,6 @@ chapter: false
 
 # Báo cáo thực tập
 
-### Thành viên nhóm:
-
-#### Thành viên 1:
 &emsp; **Họ và tên:** Nguyễn Hoàng Tuấn 
 
 &emsp; **Số điện thoại:** 0799559397
@@ -31,27 +28,6 @@ chapter: false
 ![%nh đại diện thành viên 1](/images/avatar.png)
 
 ---
-
-#### Thành viên 2:
-&emsp; **Họ và tên:** Nguyễn Thị Thu Hoài 
-
-&emsp; **Số điện thoại:** 0987654321
-
-&emsp; **Email:** Bnguyenvan@gmail.com
-
-&emsp; **Trường:** Đại học Sài Gòn
-
-&emsp; **Ngành:** Công nghệ thông tin
-
-&emsp; **Lớp:** DCT121
-
-&emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Vietnam
-
-&emsp; **Vị trí thực tập:** FCJ Cloud Intern
-
-&emsp; **Thời gian thực tập:** Từ 29/09/2025 đến 22/11/2025
-
-![%nh đại diện thành viên 2](/images/avatar.png)
 
 ### Nội dung báo cáo
 

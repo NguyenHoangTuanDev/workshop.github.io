@@ -6,7 +6,6 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-
 # Nền tảng Dự đoán Khách hàng Rời bỏ Ngân hàng trên AWS  
 ## Giải pháp triển khai mô hình Machine Learning dự đoán churn khách hàng
 
